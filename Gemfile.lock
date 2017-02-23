@@ -4,7 +4,10 @@ GEM
     dotenv (2.2.0)
     haml (4.0.7)
       tilt
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     minitest (5.10.1)
+    multi_xml (0.6.0)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -25,6 +28,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   haml
+  httparty
   minitest
   rack-test
   sass

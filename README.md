@@ -1,3 +1,19 @@
+##Notes
+
+####How to Run
+
+Please add your own OpenWeather API Key in the `.env` file, then run `shotgun
+config.ru` - the server will start on localhost:9393
+
+####Things to improve
+
+* The OpenWeather API defaults units to Kelvin (why..?) so in this app, I made the default
+metric - it would be nice to pick your units, or default to the units used by
+the country requested.  
+* Add sunrise/sunset times, ideally in local time - although as far as I can
+  see, OpenWeather does not include a location offset/timezone, and the times
+  are given in UTC
+
 Welcome to the interview task :)
 ===============================
 

@@ -7,7 +7,7 @@ Bundler.require
 # require testing components
 require 'rack/test'
 require 'minitest/autorun'
-Dir.glob('./spec/factories/*.rb') { |f| require f }
+Dotenv.load
 
 # require application components
 Dir.glob('./lib/**/*.rb') { |f| require f }
@@ -18,10 +18,16 @@ class BaseSpec < Minitest::Spec
   def expand_path(path)
     File.expand_path(path, __FILE__)
   end
+
+  class FakeWeatherFetcher
+  end
 end
 
 class AppSpec < BaseSpec
   include Rack::Test::Methods
+
+  # otherwise it looks for views in the spec directory
+  before { app.views = './views' }
 
   def app
     WeatherApp

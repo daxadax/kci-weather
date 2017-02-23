@@ -1,9 +1,10 @@
 source 'http://www.rubygems.org'
 
-gem 'sinatra'
 gem 'dotenv'
 gem 'haml'
+gem 'httparty'
 gem 'sass'
+gem 'sinatra'
 
 group :development do
   gem 'shotgun'
