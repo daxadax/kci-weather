@@ -1,7 +1,12 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'dotenv'
+require 'sass/plugin/rack'
+require 'sass'
 require 'json'
+
+#Sass::Plugin.options[:style] = :compressed
+use Sass::Plugin::Rack
 
 Dotenv.load
 Bundler.require
