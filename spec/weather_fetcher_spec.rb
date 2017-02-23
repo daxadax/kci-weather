@@ -19,7 +19,7 @@ class WeatherFetcherSpec < BaseSpec
       { city: 'san francisco' }
     end
 
-    it 'does something' do
+    it 'fetches the data and converts it from JSON' do
       assert_equal 200, result['cod']
       assert_kind_of Hash, result
     end
