@@ -2,5 +2,6 @@
   Where would you like to get the weather?
 #form.center
   %form{action: '/city', method: 'post'}
-    %input{autofocus: true, name: 'city'}
+    %input{autofocus: true, required: true, placeholder: 'Berlin', name: 'city'}
+    %input{name: 'country', placeholder: 'Germany'}
     %input{type: 'submit'}

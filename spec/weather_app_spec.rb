@@ -33,7 +33,10 @@ class WeatherAppSpec < AppSpec
 
   describe 'POST' do
     let(:params) do
-      { 'city': 'berlin, germany' }
+      {
+        'city': 'berlin',
+        'country': 'germany'
+      }
     end
     let(:result) { post path, params }
 

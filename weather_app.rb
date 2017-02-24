@@ -21,7 +21,8 @@ class WeatherApp < Sinatra::Application
 
   post '/city' do
     city = params['city']
-    forecast = Forecaster.new(city: city)
+    country = params['country']
+    forecast = Forecaster.new(city: "#{city}, #{country}")
 
     serve_weather(forecast)
   end
