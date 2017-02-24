@@ -16,7 +16,34 @@ class ForecasterSpec < BaseSpec
       assert_equal 0, result.low_temp
       assert_equal 15, result.high_temp
       assert_equal '82%', result.humidity
+    end
+
+    it 'returns a formatted location' do
       assert_equal 'San Francisco, US', result.location
+    end
+
+    it 'returns the unknown_location flag as false' do
+      assert_equal false, result.unknown_location?
+    end
+  end
+
+  describe 'a location without a name' do
+    let(:input) do
+      {
+        data: fixture_data('unnamed_location')
+      }
+    end
+
+    it 'grants access to weather information' do
+      assert_equal 'light rain', result.description
+      assert_equal 19.43, result.current_temp
+      assert_equal 19.43, result.low_temp
+      assert_equal 19.43, result.high_temp
+      assert_equal '90%', result.humidity
+    end
+
+    it 'returns the location as coordinates' do
+      assert_equal 'Lat: -38, Long: -19', result.location
     end
 
     it 'returns the unknown_location flag as false' do

@@ -47,7 +47,15 @@ class Forecaster
       low_temp: data['main']['temp_min'],
       high_temp: data['main']['temp_max'],
       humidity: "#{data['main']['humidity']}%",
-      location: "#{data['name']}, #{data['sys']['country']}"
+      location: get_location(data)
     }
+  end
+
+  def get_location(data)
+    if data['name'].empty?
+      "Lat: #{data['coord']['lat']}, Long: #{data['coord']['lon']}"
+    else
+      "#{data['name']}, #{data['sys']['country']}"
+    end
   end
 end
