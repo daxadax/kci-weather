@@ -2,10 +2,13 @@
 
 ####How to Run
 
-Please add your own OpenWeather API Key in the `.env` file, then run `shotgun
-config.ru` - the server will start on `localhost:9393`
+Run `bundle install` in the project directory to install the gems.  
 
-To run the tests, copy the `.env` file to `.env.test`
+Please add your own OpenWeather API Key in the `.env` file, then run `shotgun
+config.ru` - the server will start on `localhost:9393`  
+
+To run the tests, copy the `.env` file to `.env.test`.  The test suite can be run 
+with `rake` - the tests are the default task.  
 
 ####Things to improve
 
