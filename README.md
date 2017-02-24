@@ -3,7 +3,9 @@
 ####How to Run
 
 Please add your own OpenWeather API Key in the `.env` file, then run `shotgun
-config.ru` - the server will start on localhost:9393
+config.ru` - the server will start on `localhost:9393`
+
+To run the tests, copy the `.env` file to `.env.test`
 
 ####Things to improve
 
@@ -13,6 +15,11 @@ the country requested.
 * Add sunrise/sunset times, ideally in local time - although as far as I can
   see, OpenWeather does not include a location offset/timezone, and the times
   are given in UTC
+* Caching the forecast could be very simply done if a DB was hooked up in the
+  application - using PostgreSQL's json type, the data from the `WeatherFetcher`
+  class could be dumped completely into a column.  Popular locations could be
+  added to a small task so that they are fetched at a certain time each day (or
+  each hour) so fresh information is always available while minimizing API calls.
 
 Welcome to the interview task :)
 ===============================
