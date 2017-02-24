@@ -43,4 +43,10 @@ ul {
   margin-left: 0px;
   margin-right: 0px; }
 
+body #welcome {
+  font-size: 2em; }
+body #forecast {
+  margin-top: 1em;
+  font-size: 1.5em; }
+
 /*# sourceMappingURL=base.css.map */

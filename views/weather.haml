@@ -1,0 +1,9 @@
+#welcome.center
+  = "Forecast for #{forecast.location}:"
+#forecast.center
+  .current
+    = "Currently #{forecast.current_temp}°C "
+    = "and #{forecast.description} with #{forecast.humidity} humidity"
+  .additional
+    = "Low of #{forecast.low_temp}°C and a high of #{forecast.high_temp}°C"
+
